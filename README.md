@@ -18,5 +18,6 @@
 4. initCapAndLowerCaseAllTheOthers - It returns a character string with the first letter of each word converted to uppercase. All other letters in the string will be converted to lowercase.
 
     'heLlo World' => Hello World
+
     'heLlo-World' => Hello-World
 
