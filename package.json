@@ -1,14 +1,14 @@
 {
   "name": "string-case",
-  "version": "1.0.0",
-  "description": "It returns a character string with the first letter of each word converted to uppercase. All other letters in the string will be converted to lowercase.",
+  "version": "1.1.0",
+  "description": "A Node.js module offering various string manipulation functions for capitalization, initial capitalization of words, and specific casing of text.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "^3.1.2",
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "mocha": "^10.2.0"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "lowercase",
     "word",
     "conversion"
-   ],
+  ],
   "author": "Shan Chinnananchi",
   "license": "ISC",
   "bugs": {

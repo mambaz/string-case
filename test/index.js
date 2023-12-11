@@ -1,65 +1,53 @@
-'use strict';
+const { expect } = require('chai');
+const {
+    capitalize,
+    initCap,
+    capitalizeAndLowerCaseAllTheOthers,
+    initCapAndLowerCaseAllTheOthers
+} = require('../index');
 
-var chai = require('chai'),
-    should = chai.should(),
-    expect = chai.expect,
-    n = require('../index.js'),
-    capitalize = [
-        'hello world',
-        'hello World'
-    ],
-    capitalizeAndLowerCaseAllTheOthers = [
-        'hello world',
-        'hello wORld'
-    ],
-    initCap = [
-        'hello world',
-        'hello-world'
-    ],
-    initCapAndLowerCaseAllTheOthers = [
-        'hello world',
-        'hello WOrld',
-        'hello-WOrld'
-    ];
+describe('String Manipulation Functions', () => {
+    describe('capitalize', () => {
+        it('should capitalize the first letter of a string', () => {
+            expect(capitalize('hello')).to.equal('Hello');
+            expect(capitalize('world')).to.equal('World');
+        });
 
-
-
-describe('##### String CASE #####', function() {
-
-    it ('capitalize Format', function () {
-
-        capitalize.forEach (function (string) {
-            var result = n.capitalize(string);
-            //console.log(result);
-            result.should.be.a('string');
+        it('should return an empty string if provided an empty string', () => {
+            expect(capitalize('')).to.equal('');
         });
     });
 
-    it ('capitalize and lowercase all the others string', function () {
+    describe('initCap', () => {
+        it('should capitalize the first letter of each word in a string', () => {
+            expect(initCap('hello world')).to.equal('Hello World');
+            expect(initCap('multiple words in this string')).to.equal('Multiple Words In This String');
+        });
 
-        capitalizeAndLowerCaseAllTheOthers.forEach (function (string) {
-            var result = n.capitalizeAndLowerCaseAllTheOthers(string);
-            //console.log(result);
-            result.should.be.a('string');
+        it('should return an empty string if provided an empty string', () => {
+            expect(initCap('')).to.equal('');
         });
     });
 
-    it ('First letter of each word to uppercase ', function () {
+    describe('capitalizeAndLowerCaseAllTheOthers', () => {
+        it('should capitalize the first letter and lowercase the rest of the string', () => {
+            expect(capitalizeAndLowerCaseAllTheOthers('HeLlO')).to.equal('Hello');
+            expect(capitalizeAndLowerCaseAllTheOthers('worlD')).to.equal('World');
+        });
 
-        initCap.forEach (function (string) {
-            var result = n.initCap(string);
-            //console.log(result);
-            result.should.be.a('string');
+        it('should return an empty string if provided an empty string', () => {
+            expect(capitalizeAndLowerCaseAllTheOthers('')).to.equal('');
         });
     });
 
-    it ('First letter of each word to uppercase and others to lowercase', function () {
-
-        initCapAndLowerCaseAllTheOthers.forEach (function (string) {
-            var result = n.initCapAndLowerCaseAllTheOthers(string);
-            //console.log(result);
-            result.should.be.a('string');
+    describe('initCapAndLowerCaseAllTheOthers', () => {
+        it('should capitalize the first letter of each word and lowercase the rest of the string', () => {
+            expect(initCapAndLowerCaseAllTheOthers('HeLlO woRlD')).to.equal('Hello World');
+            expect(initCapAndLowerCaseAllTheOthers('MuLtIplE WoRdS')).to.equal('Multiple Words');
         });
-    });  
 
+        it('should return an empty string if provided an empty string', () => {
+            expect(initCapAndLowerCaseAllTheOthers('')).to.equal('');
+        });
+    });
 });

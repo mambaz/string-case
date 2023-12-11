@@ -1,43 +1,38 @@
-# string-case
+# String Manipulation Functions
 
-1. capitalize - It returns the first letter to uppercase
-
-    'heLlo world' => HeLlo world
-
-
-2. capitalizeAndLowerCaseAllTheOthers - It returns the first letter to uppercase and all other words in the string will be converted to lowercase.
-
-    'heLlo world' => Hello world
-
-
-3. initCap - It returns a character string with the first letter of each word converted to uppercase.
-
-    'heLlo World' => HeLlo World
-
-
-4. initCapAndLowerCaseAllTheOthers - It returns a character string with the first letter of each word converted to uppercase. All other letters in the string will be converted to lowercase.
-
-    'heLlo World' => Hello World
-
-    'heLlo-World' => Hello-World
+A Node.js module providing various string manipulation functions to handle capitalization and text formatting.
 
 ## Installation
 
-    npm install string-case --save
+Install the package via npm:
+
+```bash
+npm install string-case --save
+```
 
 ## Usage
 
 ```javascript
-var $ = require('string-case')
+const {
+  capitalize,
+  initCap,
+  capitalizeAndLowerCaseAllTheOthers,
+  initCapAndLowerCaseAllTheOthers,
+} = require("string-case");
 
-var result = $.capitalize ('hello world'); // Hello world
+// Capitalize the first letter of a string
+const capitalizedString = capitalize("hello"); // Output: 'Hello'
 
-var result = $.capitalizeAndLowerCaseAllTheOthers ('hello WoRld'); // Hello World
+// Capitalize the first letter of each word in a string
+const initCapitalizedString = initCap("hello world"); // Output: 'Hello World'
 
-var result = $.initCap ('hello world'); // Hello World
-var result = $.initCap ('hello-world'); // Hello-World
+// Capitalize the first letter and lowercase the rest of the string
+const modifiedString = capitalizeAndLowerCaseAllTheOthers("HeLlO"); // Output: 'Hello'
 
-var result = $.initCapAndLowerCaseAllTheOthers ('helLo woRld'); // Hello World
-var result = $.initCapAndLowerCaseAllTheOthers ('hello-world'); // Hello-World
+// Capitalize the first letter of each word and lowercase the rest of the string
+const modifiedString = initCapAndLowerCaseAllTheOthers("HeLlO woRlD"); // Output: 'Hello World'
 
 ```
+These functions provide various ways to manipulate strings, allowing for capitalization, initial capitalization of words, and specific casing of text based on your requirements.
+
+Feel free to integrate these functions into your Node.js projects to handle string manipulations efficiently.
