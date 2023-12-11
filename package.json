@@ -26,7 +26,7 @@
     "conversion"
   ],
   "author": "Shan Chinnananchi",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mambaz/string-case/issues"
   },
