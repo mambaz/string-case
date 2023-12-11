@@ -1,6 +1,6 @@
 {
   "name": "string-case",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Node.js module offering various string manipulation functions for capitalization, initial capitalization of words, and specific casing of text.",
   "main": "index.js",
   "scripts": {
